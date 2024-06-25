@@ -9,13 +9,13 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api")
 public class CatFactController {
-    @Autowired
     private CatFactRepository catFactRepository;
 
     private final CatFactService catFactService;
 
     @Autowired
-    public CatFactController(CatFactService catFactService) {
+    public CatFactController(CatFactRepository catFactRepository,CatFactService catFactService) {
+        this.catFactRepository = catFactRepository;
         this.catFactService = catFactService;
     }
 
